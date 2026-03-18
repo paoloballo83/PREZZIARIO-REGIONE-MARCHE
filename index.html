@@ -256,6 +256,44 @@ function word(ve){
   var cap=v.cod.split('.')[0];
   var cn=CAPS[cap]||'Capitolo '+cap;
   var pr=v.prezzo.toLocaleString('it-IT',{minimumFractionDigits:2});
+  var html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">'+
+    '<head><meta charset="utf-8">'+
+    '<style>'+
+    'body{font-family:Arial,sans-serif;margin:40px}'+
+    'h1{color:#00693e;font-size:18pt;text-align:center;border-bottom:2px solid #00693e;padding-bottom:10px}'+
+    'h2{color:#004d2e;font-size:13pt;margin-top:20px}'+
+    '.cod{font-size:16pt;font-weight:bold;color:#00693e;margin:15px 0}'+
+    '.desc{font-size:11pt;line-height:1.8;margin:15px 0;text-align:justify}'+
+    'table{width:100%;border-collapse:collapse;margin-top:20px}'+
+    'td{border:1px solid #ccc;padding:10px 14px;font-size:11pt}'+
+    '.label{background:#00693e;color:white;font-weight:bold;width:40%}'+
+    '.prezzo{font-size:16pt;font-weight:bold;color:#00693e}'+
+    '.footer{margin-top:30px;font-size:9pt;color:#888;border-top:1px solid #ccc;padding-top:10px}'+
+    '</style></head><body>'+
+    '<h1>PREZZARIO REGIONE MARCHE 2025</h1>'+
+    '<p style="text-align:center;color:#666;font-size:10pt">Delibera Giunta Regionale n. 1023 del 30 giugno 2025</p>'+
+    '<p style="text-align:center;color:#666;font-size:10pt;margin-bottom:20px">Capitolo '+cap+' — '+cn+'</p>'+
+    '<div class="cod">Codice Tariffa: '+v.cod+'</div>'+
+    '<h2>Descrizione dell\'Articolo</h2>'+
+    '<div class="desc">'+v.desc.replace(/\n/g,'<br>')+'</div>'+
+    '<table>'+
+    '<tr><td class="label">Unita di Misura</td><td>'+v.um+'</td></tr>'+
+    '<tr><td class="label">Prezzo Unitario</td><td class="prezzo">&euro; '+pr+'</td></tr>'+
+    '<tr><td class="label">Capitolo</td><td>'+cap+' — '+cn+'</td></tr>'+
+    '</table>'+
+    '<div class="footer">Prezzi espressi in Euro (&euro;) IVA esclusa &mdash; Prezzario Ufficiale Regione Marche 2025</div>'+
+    '</body></html>';
+  var blob=new Blob(['\ufeff'+html],{type:'application/msword'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='voce_'+v.cod.replace(/\./g,'_')+'.doc';
+  a.click();
+  showToast('📄 Scaricata voce '+v.cod);
+}
+  var v=JSON.parse(decodeURIComponent(ve));
+  var cap=v.cod.split('.')[0];
+  var cn=CAPS[cap]||'Capitolo '+cap;
+  var pr=v.prezzo.toLocaleString('it-IT',{minimumFractionDigits:2});
   var d=v.desc.replace(/\\/g,'\\\\').replace(/\{/g,'\\{').replace(/\}/g,'\\}').replace(/'/g,"\\'").replace(/\n/g,'\\par ');
   var rtf='{\\rtf1\\ansi\\ansicpg1252\\deff0'+
     '{\\fonttbl{\\f0\\froman Times New Roman;}{\\f1\\fswiss Arial;}}'+
