@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prezzario Regione Marche 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="dati.js"></script>
+<style>
+:root{--verde:#00693e;--verde2:#004d2e;--vl:#e8f5ee;--vm:#c8e6d4;--gial:#f0c020;--bg:#f0f5f2;--wh:#ffffff;--bo:#dde2e6;--tx:#1a2332;--t2:#4a5568;--t3:#7a8694;--sh:0 2px 8px rgba(0,0,0,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Roboto,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh}
+.hd{background:var(--verde2)}
+.ht{display:flex;align-items:center;gap:16px;padding:16px 32px}
+.lg{width:52px;height:52px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.ht h1{font-family:"Roboto Condensed",sans-serif;font-weight:700;font-size:22px;color:#fff}
+.ht p{font-size:12px;color:rgba(255,255,255,.8);margin-top:2px}
+.hb{margin-left:auto;background:var(--gial);color:#1a2332;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px}
+.hi{background:var(--verde);padding:9px 32px;display:flex;gap:24px;flex-wrap:wrap}
+.hii{font-size:12px;color:rgba(255,255,255,.9);display:flex;align-items:center;gap:6px}
+.hd2{width:5px;height:5px;border-radius:50%;background:var(--gial);flex-shrink:0}
+.st{display:grid;grid-template-columns:repeat(4,1fr);background:var(--bg);border-bottom:2px solid var(--vm)}
+.sc{text-align:center;padding:16px 12px;border-right:1px solid var(--bo)}
+.sc:last-child{border-right:none}
+.sv{font-family:"Roboto Condensed",sans-serif;font-weight:700;font-size:26px;color:var(--verde)}
+.sl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.ss{background:var(--bg);padding:20px 32px;border-bottom:2px solid var(--vm)}
+.sti{font-family:"Roboto Condensed",sans-serif;font-weight:700;font-size:14px;color:var(--verde2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.sr{display:flex;gap:10px;margin-bottom:12px}
+.sr input{flex:1;border:2px solid var(--bo);border-radius:8px;font-family:Roboto,sans-serif;font-size:15px;padding:11px 16px;outline:none;color:var(--tx)}
+.sr input:focus{border-color:var(--verde)}
+.sr input::placeholder{color:var(--t3)}
+.bc{background:var(--verde);border:none;border-radius:8px;color:#fff;font-family:"Roboto Condensed",sans-serif;font-weight:700;font-size:15px;padding:11px 26px;cursor:pointer}
+.bc:hover{background:var(--verde2)}
+.br{background:none;border:2px solid var(--bo);border-radius:8px;color:var(--t2);font-family:Roboto,sans-serif;font-size:14px;padding:11px 18px;cursor:pointer}
+.br:hover{border-color:var(--verde);color:var(--verde)}
+.cf{display:flex;flex-wrap:wrap;gap:6px}
+.cb{background:var(--bg);border:1px solid var(--bo);border-radius:20px;font-size:12px;font-weight:500;padding:5px 12px;cursor:pointer;color:var(--t2)}
+.cb:hover{border-color:var(--verde);color:var(--verde)}
+.cb.on{background:var(--verde);border-color:var(--verde);color:#fff}
+.rs{padding:20px 32px}
+.rh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+.rc{font-size:14px;color:var(--t2)}
+.rc strong{color:var(--verde);font-weight:700}
+.so{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t3)}
+.sb{background:none;border:1px solid var(--bo);border-radius:6px;font-size:12px;padding:4px 10px;cursor:pointer;color:var(--t2)}
+.sb.on{background:var(--vl);border-color:var(--verde);color:var(--verde);font-weight:600}
+.tw{background:#fff;border-radius:10px;box-shadow:var(--sh);overflow:hidden;border:1px solid var(--bo)}
+.th{display:grid;grid-template-columns:130px 1fr 70px 100px 130px;background:var(--verde);color:#fff;padding:11px 16px;font-family:"Roboto Condensed",sans-serif;font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+.vr{display:grid;grid-template-columns:130px 1fr 70px 100px 130px;padding:12px 16px;border-bottom:1px solid var(--bo);align-items:start;transition:background .1s}
+.vr:hover{background:var(--vl)}
+.vr:last-child{border-bottom:none}
+.vc{font-family:"Roboto Condensed",sans-serif;font-size:12px;color:var(--t3);font-weight:700;word-break:break-all}
+.vd{font-size:13px;color:var(--tx);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.vu{font-size:13px;color:var(--t2);text-align:center}
+.vp{font-family:"Roboto Condensed",sans-serif;font-weight:700;font-size:16px;color:var(--verde);text-align:right}
+.va{display:flex;justify-content:flex-end;gap:5px}
+.be{background:none;border:1px solid var(--bo);border-radius:6px;color:var(--t3);font-size:11px;padding:5px 8px;cursor:pointer}
+.be:hover{border-color:var(--verde);color:var(--verde)}
+.bw{background:var(--verde);border:none;border-radius:6px;color:#fff;font-size:12px;font-weight:600;padding:5px 10px;cursor:pointer}
+.bw:hover{background:var(--verde2)}
+.vdt{background:var(--vl);border:1px solid var(--vm);border-left:4px solid var(--verde);border-radius:0 8px 8px 0;padding:14px 16px;display:none}
+.vdt.show{display:block}
+.vdt-d{font-size:14px;line-height:1.8;color:var(--tx);margin-bottom:12px;white-space:pre-wrap;word-wrap:break-word}
+.vdt-m{display:flex;flex-wrap:wrap;gap:8px}
+.mc{background:#fff;border:1px solid var(--vm);border-radius:6px;padding:4px 12px;font-size:12px;color:var(--t2)}
+.mc strong{color:var(--verde);font-weight:700}
+.em{text-align:center;padding:60px 20px;color:var(--t3)}
+.em .i{font-size:48px;margin-bottom:12px}
+.em p{font-size:15px;margin-bottom:6px;color:var(--t2)}
+.mo{text-align:center;padding:16px;font-size:13px;color:var(--t3);border-top:1px solid var(--bo)}
+.ft{background:var(--verde2);color:rgba(255,255,255,.85);padding:14px 32px;font-size:12px;margin-top:40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ts{position:fixed;bottom:24px;right:24px;background:var(--verde);color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.2);opacity:0;transition:all .3s;pointer-events:none;z-index:100}
+.ts.on{opacity:1}
+</style>
+</head>
+<body>
+<div class="hd">
+  <div class="ht">
+    <div class="lg">🏛️</div>
+    <div>
+      <h1>Prezzario Regione Marche 2025</h1>
+      <p>Delibera Giunta Regionale n. 1023 del 30 giugno 2025 — Validita: 1 luglio — 31 dicembre 2025</p>
+    </div>
+    <div class="hb">DGR 1023/2025</div>
+  </div>
+  <div class="hi">
+    <div class="hii"><div class="hd2"></div>Prezzi IVA esclusa</div>
+    <div class="hii"><div class="hd2"></div>Aggiornamento annuale art. 23 co. 16 D.Lgs. 50/2016</div>
+    <div class="hii"><div class="hd2"></div>Download voce in formato Word</div>
+  </div>
+</div>
+<div class="st">
+  <div class="sc"><div class="sv" id="sV">0</div><div class="sl">Voci Totali</div></div>
+  <div class="sc"><div class="sv" id="sC">0</div><div class="sl">Capitoli</div></div>
+  <div class="sc"><div class="sv" id="sR">0</div><div class="sl">Risultati</div></div>
+  <div class="sc"><div class="sv" id="sS">—</div><div class="sl">Voce Selezionata</div></div>
+</div>
+<div class="ss">
+  <div class="sti">🔍 Ricerca nel Prezzario</div>
+  <div class="sr">
+    <input type="text" id="si" placeholder="Cerca descrizione, codice o parola chiave... Es: scavo, calcestruzzo, cls, intonaco, muratura" onkeydown="if(event.key==='Enter')cerca()">
+    <button class="bc" onclick="cerca()">Cerca</button>
+    <button class="br" onclick="resetta()">Azzera</button>
+  </div>
+  <div class="cf" id="cf"></div>
+</div>
+<div class="rs">
+  <div class="rh">
+    <div class="rc" id="rc">Caricamento...</div>
+    <div class="so">
+      Ordina:
+      <button class="sb on" id="sCod" onclick="setSort('cod')">Codice</button>
+      <button class="sb" id="sPre" onclick="setSort('pre')">Prezzo</button>
+      <button class="sb" id="sAz" onclick="setSort('az')">A-Z</button>
+    </div>
+  </div>
+  <div class="tw">
+    <div class="th">
+      <div>Codice</div><div>Descrizione</div>
+      <div style="text-align:center">U.M.</div>
+      <div style="text-align:right">Prezzo EUR</div>
+      <div style="text-align:right">Azioni</div>
+    </div>
+    <div id="ris"><div style="text-align:center;padding:40px;color:var(--t3)">Caricamento in corso...</div></div>
+  </div>
+</div>
+<div class="ft">
+  <span>📗 Prezzario Ufficiale Regione Marche 2025 — DGR n. 1023 del 30/06/2025</span>
+  <span>Prezzi in Euro (EUR) IVA esclusa</span>
+</div>
+<div class="ts" id="ts"></div>
+<script>
+var TT=[],FL=[],ST='cod',CP='tutti';
+var CAPS={'02':'Scavi Rinterri Demolizioni','03':'Murature Calcestruzzo','04':'Consolidamento','05':'Solai Coperture','06':'Intonaci Pavimenti Rivestimenti','07':'Isolamenti Impermeabilizzazioni','08':'Opere da pittore','09':'Infissi Serramenti','10':'Opere da fabbro','11':'Carpenteria metallica','12':'Tinteggiature','17':'Strade Piazzali','18':'Fognature','19':'Acquedotti','20':'Impianti meccanici','21':'Impianti elettrici','23':'Verde pubblico','24':'Restauro conservativo','25':'Varie','26':'Sicurezza'};
+var SIN={'calcestruzzo':['cls','cemento armato','conglomerato'],'cls':['calcestruzzo','cemento armato'],'ferro':['acciaio','tondino','barre','ferri','b450c'],'acciaio':['ferro','tondino','barre'],'intonaco':['rasatura','arriccio','rinzaffo','stabilitura'],'muratura':['muri','parete','tamponamento','mattoni'],'mattone':['laterizio','foratelle','forati','blocco'],'laterizio':['mattone','blocco','foratelle'],'solaio':['laterocemento','travetti','pignatte'],'cappotto':['isolamento','coibentazione','termoisolante'],'impermeabilizzazione':['guaina','bitume','membrana'],'piastrelle':['ceramica','gres','rivestimento'],'scavo':['sbancamento','sterro'],'demolizione':['abbattimento','rimozione'],'ponteggio':['impalcatura','trabattello'],'massetto':['sottofondo'],'infisso':['finestra','serramento','porta'],'manodopera':['mdo','operaio','muratore']};
+
+function init(){
+  if(typeof VOCI==='undefined'||!VOCI.length){
+    document.getElementById('ris').innerHTML='<div style="text-align:center;padding:40px;color:red">File dati.js non trovato! Carica anche dati.js su GitHub.</div>';
+    return;
+  }
+  TT=VOCI;FL=TT.slice();
+  document.getElementById('sV').textContent=TT.length.toLocaleString('it-IT');
+  document.getElementById('sC').textContent=Object.keys(CAPS).length;
+  renderCaps();renderRis();
+}
+
+function renderCaps(){
+  var h='<button class="cb on" id="c_tutti" onclick="setCap(\'tutti\')">Tutti i capitoli</button>';
+  Object.keys(CAPS).forEach(function(k){
+    var n=TT.filter(function(v){return v.cod.startsWith(k+'.');}).length;
+    h+='<button class="cb" id="c_'+k+'" onclick="setCap(\''+k+'\')">Cap. '+k+' — '+CAPS[k]+' ('+n+')</button>';
+  });
+  document.getElementById('cf').innerHTML=h;
+}
+
+function setCap(c){
+  CP=c;
+  document.querySelectorAll('.cb').forEach(function(b){b.classList.remove('on');});
+  var el=document.getElementById('c_'+c);if(el)el.classList.add('on');
+  cerca();
+}
+
+function setSort(s){
+  ST=s;
+  ['Cod','Pre','Az'].forEach(function(x){document.getElementById('s'+x).classList.remove('on');});
+  document.getElementById('s'+s.charAt(0).toUpperCase()+s.slice(1)).classList.add('on');
+  renderRis();
+}
+
+function espandi(q){
+  var pp=q.toLowerCase().trim().split(/\s+/).filter(function(p){return p.length>1;});
+  return pp.map(function(p){
+    var g=[p];
+    if(SIN[p])SIN[p].forEach(function(s){g.push(s);});
+    Object.keys(SIN).forEach(function(k){if(SIN[k].indexOf(p)>=0&&g.indexOf(k)<0)g.push(k);});
+    return g;
+  });
+}
+
+function cerca(){
+  var q=document.getElementById('si').value.trim();
+  var e=q.length>1?espandi(q):[];
+  FL=TT.filter(function(v){
+    if(CP!=='tutti'&&!v.cod.startsWith(CP+'.'))return false;
+    if(!e.length)return true;
+    var t=(v.cod+' '+v.desc).toLowerCase();
+    return e.every(function(g){return g.some(function(s){return t.indexOf(s)>=0;});});
+  });
+  renderRis();
+}
+
+function resetta(){
+  document.getElementById('si').value='';
+  CP='tutti';
+  document.querySelectorAll('.cb').forEach(function(b){b.classList.remove('on');});
+  document.getElementById('c_tutti').classList.add('on');
+  FL=TT.slice();renderRis();
+}
+
+function renderRis(){
+  var s=FL.slice();
+  if(ST==='cod')s.sort(function(a,b){return a.cod.localeCompare(b.cod);});
+  else if(ST==='pre')s.sort(function(a,b){return b.prezzo-a.prezzo;});
+  else s.sort(function(a,b){return a.desc.localeCompare(b.desc);});
+  document.getElementById('sR').textContent=FL.length.toLocaleString('it-IT');
+  document.getElementById('rc').innerHTML='Trovati <strong>'+FL.length.toLocaleString('it-IT')+'</strong> risultati su '+TT.length.toLocaleString('it-IT')+' voci totali';
+  if(!s.length){document.getElementById('ris').innerHTML='<div class="em"><div class="i">🔍</div><p>Nessun risultato</p><small>Prova con termini diversi</small></div>';return;}
+  var MAX=200,h='';
+  window._voci=s.slice(0,MAX);
+  s.slice(0,MAX).forEach(function(v,i){
+    var pr=v.prezzo.toLocaleString('it-IT',{minimumFractionDigits:2});
+    var ds=v.desc.length>160?v.desc.substring(0,160)+'...':v.desc;
+    h+='<div class="vr">'+
+      '<div class="vc">'+esc(v.cod)+'</div>'+
+      '<div class="vd">'+esc(ds)+'</div>'+
+      '<div class="vu">'+esc(v.um)+'</div>'+
+      '<div class="vp">EUR '+pr+'</div>'+
+      '<div class="va">'+
+        '<button class="be" onclick="togD(\'dt'+i+'\','+i+')">&#9660;</button>'+
+        '<button class="bw" onclick="scarica('+i+')">Word</button>'+
+      '</div>'+
+    '</div>'+
+    '<div class="vdt" id="dt'+i+'"></div>';
+  });
+  if(s.length>MAX)h+='<div class="mo">Mostrati '+MAX+' su '+s.length+' — affina la ricerca per altri</div>';
+  document.getElementById('ris').innerHTML=h;
+}
+
+function togD(id,idx){
+  var el=document.getElementById(id);
+  if(el.classList.contains('show')){el.classList.remove('show');document.getElementById('sS').textContent='—';return;}
+  var v=window._voci[idx];
+  if(!v)return;
+  document.getElementById('sS').textContent=v.cod;
+  var cap=v.cod.split('.')[0];
+  var cn=CAPS[cap]||'Capitolo '+cap;
+  el.innerHTML='<div class="vdt-d">'+esc(v.desc)+'</div>'+
+    '<div class="vdt-m">'+
+    '<div class="mc">Codice: <strong>'+esc(v.cod)+'</strong></div>'+
+    '<div class="mc">U.M.: <strong>'+esc(v.um)+'</strong></div>'+
+    '<div class="mc">Prezzo: <strong>EUR '+v.prezzo.toLocaleString('it-IT',{minimumFractionDigits:2})+'</strong></div>'+
+    '<div class="mc">Capitolo: <strong>'+cn+'</strong></div>'+
+    '</div>'+
+    '<div style="margin-top:10px">'+
+    '<button onclick="vediCap(\''+cap+'\')" style="background:var(--verde);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:600;padding:8px 16px;cursor:pointer">'+
+    '📋 Vedi tutto Capitolo '+cap+' — '+cn+'</button>'+
+    '</div>';
+  el.classList.add('show');
+}
+
+function vediCap(cap){
+  CP=cap;
+  document.getElementById('si').value='';
+  document.querySelectorAll('.cb').forEach(function(b){b.classList.remove('on');});
+  var el=document.getElementById('c_'+cap);if(el)el.classList.add('on');
+  FL=TT.filter(function(v){return v.cod.startsWith(cap+'.');});
+  renderRis();
+  window.scrollTo({top:document.getElementById('ris').offsetTop-20,behavior:'smooth'});
+}
+
+function scarica(idx){
+  var v=window._voci[idx];
+  if(!v)return;
+  var cap=v.cod.split('.')[0];
+  var cn=CAPS[cap]||'Capitolo '+cap;
+  var pr=v.prezzo.toLocaleString('it-IT',{minimumFractionDigits:2});
+  var html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><style>'+
+    'body{font-family:Arial,sans-serif;margin:40px}'+
+    'h1{color:#00693e;font-size:18pt;text-align:center;border-bottom:2px solid #00693e;padding-bottom:8px}'+
+    '.sub{text-align:center;color:#666;font-size:10pt;margin-bottom:20px}'+
+    '.cod{font-size:15pt;font-weight:bold;color:#00693e;margin:16px 0 8px}'+
+    'h2{color:#004d2e;font-size:12pt;margin-top:20px;margin-bottom:8px}'+
+    '.desc{font-size:11pt;line-height:1.8;text-align:justify}'+
+    'table{width:100%;border-collapse:collapse;margin-top:20px}'+
+    'td{border:1px solid #ccc;padding:9px 14px;font-size:11pt}'+
+    '.lb{background:#00693e;color:white;font-weight:bold;width:40%}'+
+    '.pp{font-size:15pt;font-weight:bold;color:#00693e}'+
+    '.ft{margin-top:28px;font-size:9pt;color:#999;border-top:1px solid #ddd;padding-top:8px}'+
+    '</style></head><body>'+
+    '<h1>PREZZARIO REGIONE MARCHE 2025</h1>'+
+    '<div class="sub">Delibera Giunta Regionale n. 1023 del 30 giugno 2025<br>'+
+    'Capitolo '+cap+' — '+cn+'</div>'+
+    '<div class="cod">Codice: '+v.cod+'</div>'+
+    '<h2>Descrizione</h2>'+
+    '<div class="desc">'+v.desc.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</div>'+
+    '<table>'+
+    '<tr><td class="lb">Unita di Misura</td><td>'+v.um+'</td></tr>'+
+    '<tr><td class="lb">Prezzo Unitario</td><td class="pp">EUR '+pr+'</td></tr>'+
+    '<tr><td class="lb">Capitolo</td><td>'+cap+' — '+cn+'</td></tr>'+
+    '</table>'+
+    '<div class="ft">Prezzario Regione Marche 2025 — DGR 1023/2025 — Prezzi EUR IVA esclusa</div>'+
+    '</body></html>';
+  var blob=new Blob(['\ufeff'+html],{type:'application/msword'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='voce_'+v.cod.replace(/\./g,'_')+'.doc';
+  a.click();
+  toast('Scaricata voce '+v.cod);
+}
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function toast(m){var t=document.getElementById('ts');t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on');},2500);}
+window.onload=function(){setTimeout(init,100);};
+</script>
+</body>
+</html>
